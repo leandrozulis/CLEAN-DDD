@@ -19,6 +19,7 @@
   "homepage": "https://github.com/leandrozulis/CLEAN-DDD#readme",
   "devDependencies": {
     "@types/node": "^20.12.6",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.4",
+    "vitest": "^1.4.0"
   }
 }
