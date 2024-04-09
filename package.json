@@ -1,0 +1,24 @@
+{
+  "name": "clean-ddd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrozulis/CLEAN-DDD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandrozulis/CLEAN-DDD/issues"
+  },
+  "homepage": "https://github.com/leandrozulis/CLEAN-DDD#readme",
+  "devDependencies": {
+    "@types/node": "^20.12.6",
+    "typescript": "^5.4.4"
+  }
+}
