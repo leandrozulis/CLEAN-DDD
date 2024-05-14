@@ -9,7 +9,7 @@ interface AnswerQuestionUseCaseRequest {
 
 export class AnswerQuestionUseCase {
 
-  constructor(private answersReposuitory : AnswersRepository) {}
+  constructor(private answersRepository : AnswersRepository) {}
 
   async execute({ instructorId, questionId, content }: AnswerQuestionUseCaseRequest) {
     const answer = new Answer({
@@ -18,7 +18,7 @@ export class AnswerQuestionUseCase {
       questionId
     })
 
-    await this.answersReposuitory.create(answer)
+    await this.answersRepository.create(answer)
 
     return answer
   }
