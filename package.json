@@ -21,6 +21,10 @@
   "devDependencies": {
     "@types/node": "^20.12.6",
     "typescript": "^5.4.4",
+    "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.4.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.11"
   }
 }
