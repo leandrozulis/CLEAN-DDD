@@ -26,7 +26,7 @@ export class CreateQuestionUseCase {
     await this.questionsRepository.create(question);
 
     return {
-      questionk
+      question
     };
   }
 }
