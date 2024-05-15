@@ -20,6 +20,7 @@
   "homepage": "https://github.com/leandrozulis/CLEAN-DDD#readme",
   "devDependencies": {
     "@eslint/js": "^9.2.0",
+    "@faker-js/faker": "^8.4.1",
     "@types/node": "^20.12.6",
     "eslint": "^8.57.0",
     "globals": "^15.2.0",
