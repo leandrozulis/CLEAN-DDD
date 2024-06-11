@@ -48,7 +48,7 @@ export class EditQuestionUseCase {
     });
 
     questionAttachmentList.update(questionAttachments)
-
+    
     question.title = title;
     question.content = content;
     question.attachments = questionAttachmentList;
