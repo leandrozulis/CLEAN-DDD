@@ -35,7 +35,7 @@ describe('Edit Answer', () => {
         answerId: newAnswer.id,
         attachmentId: new UniqueEntityID('2')
       }),
-    )
+    );
 
 
     await sut.execute({
@@ -68,10 +68,10 @@ describe('Edit Answer', () => {
       authorId:'author-2',
       content: 'Conteúdo teste',
       atachmentsIds: []
-    })
+    });
 
-    expect(result.isLeft()).toBe(true)
-    expect(result.value).toBeInstanceOf(NotAllowedError)
+    expect(result.isLeft()).toBe(true);
+    expect(result.value).toBeInstanceOf(NotAllowedError);
 
   });
 });

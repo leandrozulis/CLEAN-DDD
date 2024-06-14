@@ -35,7 +35,7 @@ describe('Delete Question', () => {
         questionId: newQuestion.id,
         attachmentId: new UniqueEntityID('2')
       }),
-    )
+    );
 
     await sut.execute({
       authorId:'author-1',
@@ -58,10 +58,10 @@ describe('Delete Question', () => {
     const result = await sut.execute({
       authorId:'author-2',
       questionId: 'question-1'
-    })
+    });
 
-    expect(result.isLeft()).toBe(true)
-    expect(result.value).toBeInstanceOf(NotAllowedError)
+    expect(result.isLeft()).toBe(true);
+    expect(result.value).toBeInstanceOf(NotAllowedError);
 
   });
 });

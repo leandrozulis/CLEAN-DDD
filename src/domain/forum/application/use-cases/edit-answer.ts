@@ -36,8 +36,8 @@ export class EditAnswerUseCase {
       return left(new NotAllowedError());
     }
 
-    const currentAnswerAttachments = await this.answerAttachmentsRepository.findManyByAnswerId(answerId)
-    const answerAttachmentList = new AnswerAttachmentList(currentAnswerAttachments)
+    const currentAnswerAttachments = await this.answerAttachmentsRepository.findManyByAnswerId(answerId);
+    const answerAttachmentList = new AnswerAttachmentList(currentAnswerAttachments);
 
     const answerAttachments = atachmentsIds.map(attachmentId => {
       return AnswerAttachment.create({
@@ -46,7 +46,7 @@ export class EditAnswerUseCase {
       });
     });
 
-    answerAttachmentList.update(answerAttachments)
+    answerAttachmentList.update(answerAttachments);
     answer.attachments = answerAttachmentList;
 
     answer.content = content;

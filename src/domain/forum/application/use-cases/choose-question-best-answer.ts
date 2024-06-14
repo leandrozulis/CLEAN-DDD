@@ -21,27 +21,27 @@ export class ChooseQuestionBestAnswerUseCase {
 
   async execute({ authorId, answerId }: ChooseQuestionBestAnswerUseCaseRequest) : Promise<ChooseQuestionBestAnswerUseCaseResponse> {
     
-    const answer = await this.answersRepository.findById(answerId)
+    const answer = await this.answersRepository.findById(answerId);
 
     if (!answer) {
-      return left(new ResourceNotFoundError())
+      return left(new ResourceNotFoundError());
     }
 
-    const question = await this.questionRepository.findById(answer.questionId.toString())
+    const question = await this.questionRepository.findById(answer.questionId.toString());
 
     if (!question) {
-      return left(new ResourceNotFoundError())
+      return left(new ResourceNotFoundError());
     }
 
     if (authorId !== question.authorId.toString()) {
-      return left(new NotAllowedError())
+      return left(new NotAllowedError());
     }
 
-    question.bestAnswerId = answer.id
+    question.bestAnswerId = answer.id;
 
-    await this.questionRepository.save(question)
+    await this.questionRepository.save(question);
 
-    return right({ question })
+    return right({ question });
 
   }
 }

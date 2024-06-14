@@ -12,7 +12,7 @@ let sut: CommentOnQuestionUseCase;
 describe('Comment on Question', () => {
 
   beforeEach(() => {
-    inMemoryQuestionAttachmentsRepository = new InMemoryQuestionAttachmentsRepository()
+    inMemoryQuestionAttachmentsRepository = new InMemoryQuestionAttachmentsRepository();
     inMemoryQuestionsRepository = new InMemoryQuestionsRepository(inMemoryQuestionAttachmentsRepository);
     inMemoryQuestionCommentsRepository = new InMemoryQuestionCommentRepository();
     sut = new CommentOnQuestionUseCase(inMemoryQuestionsRepository,inMemoryQuestionCommentsRepository);

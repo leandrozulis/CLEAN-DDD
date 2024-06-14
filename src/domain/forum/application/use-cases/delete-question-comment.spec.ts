@@ -39,10 +39,10 @@ describe('Delete Question Comment', () => {
     const result = await sut.execute({
       questionCommentId: questionComment.id.toString(),
       authorId: 'author-2',
-    })
+    });
 
-    expect(result.isLeft()).toBe(true)
-    expect(result.value).toBeInstanceOf(NotAllowedError)
+    expect(result.isLeft()).toBe(true);
+    expect(result.value).toBeInstanceOf(NotAllowedError);
 
   });
 });

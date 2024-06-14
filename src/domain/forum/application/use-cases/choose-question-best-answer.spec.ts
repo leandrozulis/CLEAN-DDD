@@ -19,17 +19,17 @@ describe('Choose Question Best Answer', () => {
   beforeEach(() => {
     inMemoryAnswerAttachmentsRepository = new InMemoryAnswerAttachmentsRepository();
     inMemoryQuestionAttachmentsRepository = new InMemoryQuestionAttachmentsRepository();
-    inMemoryQuestionsRepository = new InMemoryQuestionsRepository(inMemoryQuestionAttachmentsRepository)
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository(inMemoryQuestionAttachmentsRepository);
     inMemoryAnswersRepository = new InMemoryAnswersRepository(inMemoryAnswerAttachmentsRepository);
     sut = new ChooseQuestionBestAnswerUseCase(inMemoryQuestionsRepository,inMemoryAnswersRepository);
   });
 
   it('Should be able to choose the question best answer', async () => {
 
-    const question = makeQuestion()
+    const question = makeQuestion();
     const answer = makeAnswer({
       questionId: question.id
-    })
+    });
 
     inMemoryQuestionsRepository.create(question);
     inMemoryAnswersRepository.create(answer);
@@ -46,11 +46,11 @@ describe('Choose Question Best Answer', () => {
 
     const question = makeQuestion({
       authorId: new UniqueEntityID('author-1')
-    })
+    });
 
     const answer = makeAnswer({
       questionId: question.id
-    })
+    });
 
     inMemoryQuestionsRepository.create(question);
     inMemoryAnswersRepository.create(answer);
@@ -58,10 +58,10 @@ describe('Choose Question Best Answer', () => {
     const result = await sut.execute({
       answerId: answer.id.toString(),
       authorId: 'author-2',
-    })
+    });
 
-    expect(result.isLeft()).toBe(true)
-    expect(result.value).toBeInstanceOf(NotAllowedError)
+    expect(result.isLeft()).toBe(true);
+    expect(result.value).toBeInstanceOf(NotAllowedError);
 
   });
 });

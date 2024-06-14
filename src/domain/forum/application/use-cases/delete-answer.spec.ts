@@ -6,14 +6,14 @@ import { NotAllowedError } from './errors/not-allowed-error';
 import { InMemoryAnswerAttachmentsRepository } from 'test/repositories/in-memory-answer-attachments-repository';
 import { makeAnswerAttachment } from 'test/factories/make-answer-attachment';
 
-let inMemoryAnswerAttachmentsRepository : InMemoryAnswerAttachmentsRepository
+let inMemoryAnswerAttachmentsRepository : InMemoryAnswerAttachmentsRepository;
 let inMemoryAnswersRepository: InMemoryAnswersRepository;
 let sut: DeleteAnswerUseCase;
 
 describe('Delete Answer', () => {
 
   beforeEach(() => {
-    inMemoryAnswerAttachmentsRepository = new InMemoryAnswerAttachmentsRepository()
+    inMemoryAnswerAttachmentsRepository = new InMemoryAnswerAttachmentsRepository();
     inMemoryAnswersRepository = new InMemoryAnswersRepository(inMemoryAnswerAttachmentsRepository);
     sut = new DeleteAnswerUseCase(inMemoryAnswersRepository);
   });
@@ -35,7 +35,7 @@ describe('Delete Answer', () => {
         answerId: newAnswer.id,
         attachmentId: new UniqueEntityID('2')
       }),
-    )
+    );
 
     await sut.execute({
       authorId:'author-1',
@@ -59,8 +59,8 @@ describe('Delete Answer', () => {
       answerId: 'answer-1'
     });
 
-    expect(result.isLeft()).toBe(true)
-    expect(result.value).toBeInstanceOf(NotAllowedError)
+    expect(result.isLeft()).toBe(true);
+    expect(result.value).toBeInstanceOf(NotAllowedError);
 
   });
 });
